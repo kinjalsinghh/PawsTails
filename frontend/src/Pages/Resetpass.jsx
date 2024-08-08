@@ -6,7 +6,7 @@ function Resetpass(){
     const [password,setPassword]=useState("");
     const {id,token}=useParams()
     const handlecontinue=async ()=>{
-        await axios.post(`http://localhost:5050/resetpassword/${id}/${token}`,{pass:password})
+        await axios.post(`https://pawstails-backend.onrender.com/resetpassword/${id}/${token}`,{pass:password})
         .then((res)=>{
             console.log(res)
             if(res.data.success===true){
