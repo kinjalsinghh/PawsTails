@@ -23,13 +23,13 @@ function AddProduct(){
         let response;
         let formData=new FormData();
         formData.append('product',image);
-        await axios.post('http://localhost:5050/upload',formData)
+        await axios.post('https://pawstails-backend.onrender.com/upload',formData)
         .then((res)=>{
             response=res.data
         })
         if(response.success){
             product.image=response.image_url;
-            await axios.post('http://localhost:5050/addproduct',product)
+            await axios.post('https://pawstails-backend.onrender.com/addproduct',product)
             .then((res)=>res.data.success?alert('Product Added'):alert('Failed'));
         }
     }
