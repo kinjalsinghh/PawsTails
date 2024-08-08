@@ -23,12 +23,12 @@ const ShopContextProvider=(props)=>{
     const [cartItems,setCartItems]=useState(getDefaultCart())
 
     useEffect(()=>{
-      axios.get('http://localhost:5050/allproducts')
+      axios.get('https://pawstails-backend.onrender.com/allproducts')
       .then((res)=>{
         setAll_product(res.data)
       })
       if(localStorage.getItem('auth-token')){
-        axios.get('http://localhost:5050/getcart',{headers:{
+        axios.get('https://pawstails-backend.onrender.com/getcart',{headers:{
             Accept:'application/form-data',
             'Content-Type':'application/json',
             'auth-token':`${localStorage.getItem('auth-token')}`
@@ -42,7 +42,7 @@ const ShopContextProvider=(props)=>{
         // setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+Number(quantity)}))
         // setCartType((prev)=>({...prev,[itemId]:select}))
         if(localStorage.getItem('auth-token')){
-            await axios.post('http://localhost:5050/addtocart',{itemId:itemId,cartType:select,quantity:quantity},{  // converted 'itemId' to itemID
+            await axios.post('https://pawstails-backend.onrender.com/addtocart',{itemId:itemId,cartType:select,quantity:quantity},{  // converted 'itemId' to itemID
                 headers:{
                     Accept:'application/form-data',
                     'auth-token':`${localStorage.getItem('auth-token')}`,
@@ -64,7 +64,7 @@ const ShopContextProvider=(props)=>{
     const removeFromCart=async (itemId)=>{
         // setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
         if(localStorage.getItem('auth-token')){
-            await axios.post('http://localhost:5050/removefromcart',{itemId:itemId},{
+            await axios.post('https://pawstails-backend.onrender.com/removefromcart',{itemId:itemId},{
                 headers:{
                     Accept:'application/form-data',
                     'auth-token':`${localStorage.getItem('auth-token')}`,
