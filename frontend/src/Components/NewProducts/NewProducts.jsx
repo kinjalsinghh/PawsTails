@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 function NewProducts(){
     const [new_products,setNew_products]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5050/newproducts')
+        axios.get('https://pawstails-backend.onrender.com/newproducts')
         .then((res)=>{
             setNew_products(res.data)
         })
