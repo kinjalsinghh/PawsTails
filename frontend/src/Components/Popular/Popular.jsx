@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 function Popular(){
   const [data_product,setData_product]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:5050/bestsellers')
+    axios.get('https://pawstails-backend.onrender.com/bestsellers')
     .then((res)=>{
       setData_product(res.data)
     })
