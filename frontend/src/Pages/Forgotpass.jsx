@@ -5,7 +5,7 @@ function Forgotpass(){
     const [email,setEmail]=useState("");
     const handlecontinue=async ()=>{
         console.log(email)
-        await axios.post('http://localhost:5050/forgotpassword',{email:email})
+        await axios.post('https://pawstails-backend.onrender.com/forgotpassword',{email:email})
         .then((res)=>{
             console.log(res)
             if(res.data.success===true){
