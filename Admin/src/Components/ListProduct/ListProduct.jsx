@@ -4,11 +4,11 @@ import './ListProduct.css'
 function ListProduct(){
     const [allProducts,setAllProducts]=useState([])
     const  getListOfProducts=async ()=>{
-        await axios.get('http://localhost:5050/allproducts')
+        await axios.get('https://pawstails-backend.onrender.com/allproducts')
         .then((res)=>setAllProducts(res.data))
     }
     const deleteProduct=async (id)=>{
-        await axios.post('http://localhost:5050/removeproduct',{id:id})
+        await axios.post('https://pawstails-backend.onrender.com/removeproduct',{id:id})
         getListOfProducts();
     }
     useEffect(()=>{
