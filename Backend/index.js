@@ -33,7 +33,7 @@ server.use('/images',express.static('upload/images'));
 server.post('/upload',upload.single('product'),(req,res)=>{
    res.send({
     success:1,
-    image_url:`http://localhost:${port}/images/${req.file.filename}`
+    image_url:`https://pawstails-backend.onrender.com/images/${req.file.filename}`
    })
 })
 // APIs
