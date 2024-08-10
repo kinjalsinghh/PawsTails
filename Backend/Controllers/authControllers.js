@@ -71,7 +71,7 @@ exports.forgotpass=async (req,res)=>{
             html:`<h2>Greetings from Paws&Tails!</h2><p>\
           <h3>Hello</h3>\
           Kindly please reset your password by clicking on below link (valid for 15 minutes). Please make sure to reset your password before the link expires.<br/>\
-          <a href='https://66b78d0fa80f805690489f91--singular-begonia-459db1.netlify.app/resetpassword/${user._id}/${token}' >Click On This Link</a>\
+          <a href='https://pawstails.netlify.app/resetpassword/${user._id}/${token}' >Click On This Link</a>\
           </p>`,
           };
           
